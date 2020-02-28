@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:800&display=swap');
+
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.crypto-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #00000012;
+  margin-bottom: 5px;
+  padding: 10px 50px;
+  border-radius: 11px;
+}
+
+.image {
+  width: 25px;
+  text-align: center;
+}
+.content {
+  width: 100%;
+}
+
+.cypto-details {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+}
+
+.cypto-details {
+  text-align: center;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Playfair Display';
+  text-transform: capitalize;
+}
+
+.bold {
+  font-weight: bolder;
+}
+
+p {
+  margin: 8px;
+}
