@@ -1,4 +1,5 @@
 import React from 'react';
+import SetIcon from './SetIcon';
 
 class CryptoItem extends React.Component {
   constructor(props) {
@@ -25,12 +26,18 @@ class CryptoItem extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
+    const getUpdateValue = string => {
+      if (this.state.change !== string) {
+        this.setState({ change: string });
+      }
+    };
+
     if (snapshot === null) {
-      this.setState({ change: 'same' });
+      getUpdateValue('same');
     } else if (snapshot === true) {
-      this.setState({ change: 'up' });
+      getUpdateValue('up');
     } else {
-      this.setState({ change: 'down' });
+      getUpdateValue('down');
     }
   }
 
@@ -48,9 +55,12 @@ class CryptoItem extends React.Component {
             </div>
             <p>{this.crypto.id}</p>
             <p>{this.crypto.name}</p>
-            <p ref={this.currentPrice}>
-              {parseFloat(this.crypto.price).toFixed(2)}
-            </p>
+            <div className="priceWrapper">
+              <p ref={this.currentPrice}>
+                {parseFloat(this.crypto.price).toFixed(2)}
+              </p>
+              <SetIcon val={this.state.change} />
+            </div>
             <p>
               ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B
             </p>
