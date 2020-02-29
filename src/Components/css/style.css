@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display:800&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
 
 .container {
   max-width: 900px;
@@ -13,6 +22,7 @@
   margin-bottom: 5px;
   padding: 10px 50px;
   border-radius: 11px;
+  box-sizing: border-box;
 }
 
 .image {
@@ -52,4 +62,109 @@ h1 {
 
 p {
   margin: 8px;
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.priceWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.priceWrapper p {
+  min-width: 60px;
+}
+
+.fa-angle-double-up {
+  color: transparent;
+}
+
+.fa-angle-double-down {
+  color: transparent;
+}
+
+.blinkingR {
+  animation: blinkingTextR 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes blinkingTextR {
+  0% {
+    color: red;
+  }
+  49% {
+    color: red;
+  }
+  60% {
+    color: red;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+.blinkingG {
+  animation: blinkingTextG 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes blinkingTextG {
+  0% {
+    color: #06dc06;
+  }
+  49% {
+    color: #06dc06;
+  }
+  60% {
+    color: #06dc06;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .crypto-item {
+    padding: 10px 5px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .cryptoID {
+    display: none;
+  }
+
+  body {
+    margin: 0;
+    padding: 5px;
+  }
+  p {
+    font-size: 14px;
+  }
+
+  .cypto-details {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+  }
 }

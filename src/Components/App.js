@@ -24,15 +24,16 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getLivePrice();
-    setTimeout(this.getLivePrice, 7000);
-    setTimeout(this.getLivePrice, 14000);
-    setTimeout(this.getLivePrice, 21000);
+    setTimeout(this.getLivePrice, 500);
+    setTimeout(this.getLivePrice, 1000);
+    setInterval(this.getLivePrice, 7000);
   }
 
   render() {
     return (
       <div className="container">
         <h1>Cryptocurrency Tracker</h1>
+        <p>Updates every 7 seconds - Prices in AUD</p>
         <CryptoList list={this.state.currentList} />
       </div>
     );

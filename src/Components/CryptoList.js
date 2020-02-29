@@ -11,7 +11,7 @@ const CryptoList = ({ list }) => {
         <div className="content">
           <div className="cypto-details">
             <div className="imageWrapper"></div>
-            <p>ID</p>
+            <p className="cryptoID">ID</p>
             <p>Name</p>
             <p>Price</p>
             <p>Market Cap</p>

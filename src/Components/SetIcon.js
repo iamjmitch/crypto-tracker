@@ -4,13 +4,11 @@ class SetIcon extends React.Component {
   render() {
     switch (this.props.val) {
       case 'up':
-        return <i className="fas fa-angle-double-up">up</i>;
+        return <i className="fas fa-angle-double-up blinkingG" />;
       case 'down':
-        return <i className="fas fa-angle-double-down">down</i>;
-      case 'same':
-        return 'same ';
+        return <i className="fas fa-angle-double-down blinkingR" />;
       default:
-        return 'null ';
+        return ' ';
     }
   }
 }

@@ -5,19 +5,13 @@ class CryptoItem extends React.Component {
   constructor(props) {
     super(props);
     this.crypto = this.props.crypto;
-    this.state = { change: 0 };
-    this.currentPrice = React.createRef();
-    this.randomnumbb = Math.random;
+    this.change = 'same';
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    // console.log(prevProps.crypto);
-    // console.log(prevState);
-
-    var a = parseFloat(this.currentPrice.current.textContent).toFixed(2);
+    var a = parseFloat(prevProps.crypto.price).toFixed(2);
     var b = parseFloat(this.crypto.price).toFixed(2);
-    if (this.crypto.id == 'BTC') {
-      //   console.log(this.crypto.name, a, b);
+    if (this.crypto.id === 'BTC') {
     }
 
     if (a < b) {
@@ -31,8 +25,8 @@ class CryptoItem extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     const getUpdateValue = string => {
-      if (this.state.change !== string) {
-        this.setState({ change: string });
+      if (this.change !== string) {
+        this.change = string;
       }
     };
 
@@ -43,18 +37,10 @@ class CryptoItem extends React.Component {
     } else {
       getUpdateValue('down');
     }
-    if (this.crypto.id == 'BTC') {
-      console.log(this.currentPrice.current.textContent);
-    }
   }
 
   render() {
     this.crypto = this.props.crypto;
-
-    // if (this.crypto.id == 'BTC') {
-    //   console.log(this.crypto.price);
-    // }
-
     return (
       <div className="crypto-item">
         <div className="content">
@@ -66,19 +52,16 @@ class CryptoItem extends React.Component {
                 alt={`${this.crypto.name} logo`}
               />
             </div>
-            <p>{this.crypto.id}</p>
+            <p className="cryptoID">{this.crypto.id}</p>
             <p>{this.crypto.name}</p>
             <div className="priceWrapper">
-              <p ref={this.currentPrice}>
-                {parseFloat(this.crypto.price).toFixed(2)}
+              <p className="textBolding">
+                ${parseFloat(this.crypto.price).toFixed(2)}
               </p>
-              <SetIcon key={this.randomnumbb} val={this.state.change} />
+              <SetIcon val={this.change} />
             </div>
             <p>
-              {
-                this.crypto.price_date
-                /* ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B */
-              }
+              ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B
             </p>
           </div>
         </div>
