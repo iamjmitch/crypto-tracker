@@ -88,8 +88,7 @@ p {
 }
 
 .blinkingR {
-  animation: blinkingTextR 4s;
-  animation-iteration-count: 1;
+  animation: blinkingTextR 7s infinite;
 }
 
 @keyframes blinkingTextR {
@@ -111,8 +110,7 @@ p {
 }
 
 .blinkingG {
-  animation: blinkingTextG 4s;
-  animation-iteration-count: 1;
+  animation: blinkingTextG 7s infinite;
 }
 
 @keyframes blinkingTextG {
