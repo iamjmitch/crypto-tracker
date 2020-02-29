@@ -28,12 +28,12 @@ body {
   background: -webkit-linear-gradient(
     to right,
     #bdfff3,
-    #4ac29a
+    #bdfff3
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to right,
     #bdfff3,
-    #4ac29a
+    #bdfff3
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -92,55 +92,11 @@ p {
 }
 
 .fa-angle-double-up {
-  color: transparent;
+  color: #06dc06;
 }
 
 .fa-angle-double-down {
-  color: transparent;
-}
-
-.blinkingR {
-  animation: blinkingTextR 7s infinite;
-}
-
-@keyframes blinkingTextR {
-  0% {
-    color: red;
-  }
-  49% {
-    color: red;
-  }
-  60% {
-    color: red;
-  }
-  99% {
-    color: transparent;
-  }
-  100% {
-    color: transparent;
-  }
-}
-
-.blinkingG {
-  animation: blinkingTextG 7s infinite;
-}
-
-@keyframes blinkingTextG {
-  0% {
-    color: #06dc06;
-  }
-  49% {
-    color: #06dc06;
-  }
-  60% {
-    color: #06dc06;
-  }
-  99% {
-    color: transparent;
-  }
-  100% {
-    color: transparent;
-  }
+  color: red;
 }
 
 @media only screen and (max-width: 400px) {
