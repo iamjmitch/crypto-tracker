@@ -5,23 +5,27 @@ class CryptoItem extends React.Component {
   constructor(props) {
     super(props);
     this.crypto = this.props.crypto;
-    this.state = { change: 'same' };
+    this.state = { change: 0 };
     this.currentPrice = React.createRef();
+    this.randomnumbb = Math.random;
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
     // console.log(prevProps.crypto);
     // console.log(prevState);
 
-    if (
-      parseFloat(prevProps.crypto.price).toFixed(2) ===
-      parseFloat(this.crypto.price).toFixed(2)
-    ) {
-      return null;
-    } else if (prevProps.crypto.price > this.crypto.price) {
+    var a = parseFloat(this.currentPrice.current.textContent).toFixed(2);
+    var b = parseFloat(this.crypto.price).toFixed(2);
+    if (this.crypto.id == 'BTC') {
+      //   console.log(this.crypto.name, a, b);
+    }
+
+    if (a < b) {
+      return true;
+    } else if (a > b) {
       return false;
     } else {
-      return true;
+      return null;
     }
   }
 
@@ -39,9 +43,18 @@ class CryptoItem extends React.Component {
     } else {
       getUpdateValue('down');
     }
+    if (this.crypto.id == 'BTC') {
+      console.log(this.currentPrice.current.textContent);
+    }
   }
 
   render() {
+    this.crypto = this.props.crypto;
+
+    // if (this.crypto.id == 'BTC') {
+    //   console.log(this.crypto.price);
+    // }
+
     return (
       <div className="crypto-item">
         <div className="content">
@@ -59,10 +72,13 @@ class CryptoItem extends React.Component {
               <p ref={this.currentPrice}>
                 {parseFloat(this.crypto.price).toFixed(2)}
               </p>
-              <SetIcon val={this.state.change} />
+              <SetIcon key={this.randomnumbb} val={this.state.change} />
             </div>
             <p>
-              ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B
+              {
+                this.crypto.price_date
+                /* ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B */
+              }
             </p>
           </div>
         </div>

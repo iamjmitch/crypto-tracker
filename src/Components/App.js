@@ -24,7 +24,9 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getLivePrice();
-    setInterval(this.getLivePrice, 7000);
+    setTimeout(this.getLivePrice, 7000);
+    setTimeout(this.getLivePrice, 14000);
+    setTimeout(this.getLivePrice, 21000);
   }
 
   render() {
