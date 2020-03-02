@@ -11,20 +11,26 @@ class SetIcon extends React.Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.price > prevState.newPrice) {
+    var a = parseFloat(nextProps.price).toFixed(2);
+    var b = parseFloat(prevState.newPrice).toFixed(2);
+    if (a > b) {
       return {
         word: 'up',
-        oldPrice: prevState.newPrice,
-        newPrice: nextProps.price
+        oldPrice: b,
+        newPrice: a
       };
-    } else if (nextProps.price < prevState.newPrice) {
+    } else if (a < b) {
       return {
         word: 'down',
-        oldPrice: prevState.newPrice,
-        newPrice: nextProps.price
+        oldPrice: b,
+        newPrice: a
       };
     } else {
-      return { word: 'same' };
+      return {
+        word: 'same',
+        oldPrice: b,
+        newPrice: a
+      };
     }
   }
 
