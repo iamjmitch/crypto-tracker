@@ -26,7 +26,7 @@ class CryptoItem extends React.Component {
               <p className="textBolding">
                 ${parseFloat(this.crypto.price).toFixed(2)}
               </p>
-              <SetIcon id={this.crypto.id} price={this.crypto.price} />
+              <SetIcon price={this.crypto.price} />
             </div>
             <p>
               ${parseFloat(this.crypto.market_cap / 1000000000).toFixed(2)}B
