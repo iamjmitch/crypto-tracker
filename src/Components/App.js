@@ -33,7 +33,11 @@ class App extends React.Component {
         <h1>Cryptocurrency Tracker</h1>
         <p>Updates every 7 seconds - Prices in AUD</p>
         <CryptoList list={this.state.currentList} />
-        <a className="nomics" href="https://nomics.com" target="_blank">
+        <a
+          className="nomics"
+          href="https://nomics.com"
+          target="_blank"
+          rel="noopener noreferer">
           Crypto Market Cap & Pricing Data Provided By Nomics.
         </a>
       </div>
