@@ -146,6 +146,7 @@ p {
     margin: 0;
     padding: 5px;
   }
+
   p {
     font-size: 12px;
   }
@@ -163,7 +164,7 @@ p {
   }
 }
 
-@media only (min-width: 401px) and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .container {
     margin: 0;
     padding: 5px;

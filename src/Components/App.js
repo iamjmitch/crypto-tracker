@@ -18,13 +18,11 @@ class App extends React.Component {
       this.setState({
         currentList: response.data
       });
-      //   console.log(this.state.currentList);
     });
   };
 
   componentDidMount() {
     this.getLivePrice();
-    setTimeout(this.getLivePrice, 500);
     setTimeout(this.getLivePrice, 1000);
     setInterval(this.getLivePrice, 7000);
   }
