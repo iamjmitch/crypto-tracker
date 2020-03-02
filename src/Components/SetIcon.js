@@ -24,7 +24,7 @@ class SetIcon extends React.Component {
         newPrice: nextProps.price
       };
     } else {
-      return { word: 'icon-same' };
+      return { word: 'same' };
     }
   }
 
