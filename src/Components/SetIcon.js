@@ -5,8 +5,8 @@ const SetIcon = props => {
   let [oldPrice, setOldPrice] = useState(props.price);
 
   useEffect(() => {
-    var a = parseFloat(props.price).toFixed(2);
-    var b = parseFloat(oldPrice).toFixed(2);
+    let a = parseFloat(props.price).toFixed(2);
+    let b = parseFloat(oldPrice).toFixed(2);
 
     if (a > b) {
       setWord('up');
