@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="container">
       <h1>Cryptocurrency Tracker</h1>
-      <p>Updates every 7 seconds - Prices in AUD</p>
+      <p>Updates every 10 seconds - Prices in AUD</p>
       <CryptoList list={currentList} />
       <a
         className="nomics"
